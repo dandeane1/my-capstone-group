@@ -1,8 +1,13 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" lang="">
+<head>
+    <link rel="stylesheet" href="/css/main.css">
+</head>
 <header th:replace="~{partials/head.html :: header}"></header>
-<body>
+<body class="index-page">
+<div class="wrapper">
     <div class="container">
+        <div class="hero-top">
         <!--Navbar validation-->
         <div th:unless="${#authorization.expression('isAuthenticated()')}">
             <nav th:insert="~{partials/nav-bar.html :: nav-bar}"></nav>
@@ -10,53 +15,65 @@
         <div th:if="${#authorization.expression('isAuthenticated()')}">
             <nav th:insert="~{partials/nav-bar.html :: nav-bar2}"></nav>
         </div>
-<!--        <div id="ageModal" class="modal">-->
-<!--            <div class="modal-content">-->
-<!--                <h2>Are you over 21?</h2>-->
-<!--                <button onclick="redirectToPage(true)">Yes</button>-->
-<!--                <button onclick="redirectToPage(false)">No</button>-->
-<!--            </div>-->
-<!--        </div>-->
 
-        <div class="hero-top">
-            <div class="welcome-box">
-                <h1>Brew-Hop!</h1><br>
-                <p>We are passionate about connecting you to the best breweries around. Explore our easy-to-use search feature to discover your new favorite spot, and share your experiences by leaving reviews. Join our community of beer enthusiasts and let's celebrate the art of brewing together. Cheers to finding the perfect pint!</p>
-                <form th:action="@{/view-breweries}" th:method="post">
-                    <button>Check out Breweries</button>
-                </form>
+
+            <div class="carousel-container">
+                <div class="carousel">
+                    <div class="video-slide">
+                        <video autoplay muted id="landingPageVideo" class="video-full-width">
+                            <source th:src="@{/img/landingPageVideo.mp4}" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="hero-bottom">
-            <div class="breweries-holder-hero">
-                <h2>Check out some Breweries!</h2>
-                <input type="text" id="breweryName" placeholder="Brewery Name">
-                <input type="text" id="city" placeholder="City">
-                <input type="text" id="state" placeholder="State">
-                <select id="breweryType">
-                    <option value="">Select Brewery Type</option>
-                    <option value="micro">Micro</option>
-                    <option value="nano">Nano</option>
-                    <option value="regional">Regional</option>
-                    <option value="brewpub">Brewpub</option>
-                    <option value="large">Large</option>
-                    <option value="planning">Planning</option>
-                    <option value="bar">Bar</option>
-                    <option value="contract">Contract</option>
-                    <option value="proprietor">Proprietor</option>
-                    <option value="closed">Closed</option>
-                </select>
-                <button onclick="searchBreweries()">Search</button>
-                <div id="results"></div>
-                <script th:src="@{/js/brew.js}"></script>
+    </div>
+    <div class="row-jumbo">
+        <div class="container-jumbo">
+            <div class="jumbotron">
+                <h1 class="crafting-h1">Crafting Connections</h1>
+                <p class="lead">Embark on a journey to discover the finest breweries. Unleash the power of our intuitive search tool to unveil your next favorite haven. Share your tales by crafting reviews. Join our brotherhood of beer aficionados and together, let's raise a toast to the art of brewing.</p>
+                <hr class="jumbo-hr">
+                <p>Cheers to the pursuit of the perfect pint!</p>
             </div>
         </div>
+        <div class="jumbo-image-div">
+        <img src="/img/barrels.png" class="jumbo-image" alt="barrels">
+    </div>
+    </div>
         <div class="footer">
-            <p>Brew-Hop™: Embark on a journey of flavor and discovery. Your passport to the world of craft brews and global adventures.</p>
+            <div class="footer-list-image">
+                <ul class="footer-list ">
+                <li><a class="footer-link" th:href="@{/meet-the-team}">Meet the Team</a></li>
+                <li><a class="footer-link"  th:href="@{/about-brewhop}">About BrewHop</a></li>
+                <li><a class="footer-link"  th:href="@{/terms-of-service}">Terms of Service</a></li>
+                 </ul>
+                <a href="#" onclick="scrollToTop(); return false;">
+                    <img src="/img/brewhop.png" class="footer-image" alt="footer-image">
+                </a>
+            </div>
 
-            <h2>Meet the Team | About Brew-Hop | Terms of Service</h2>
+            <p class="footer-paragraph">Embark on a journey of flavor and discovery. Your passport to the world of craft brews and global adventures.</p>
+
         </div>
     </div>
 
+    <script>
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+        document.addEventListener('DOMContentLoaded', function () {
+            // Get the video element
+            var video = document.getElementById('landingPageVideo');
+
+            // Play the video when the DOM is fully loaded
+            if (video) {
+                video.play().catch(function (error) {
+                    console.error('Autoplay was blocked:', error);
+                });
+            }
+        });
+    </script>
 </body>
 </html>

@@ -6,11 +6,27 @@
 /*font-family: 'Trirong', serif;*/
 
 :root{
-    --primary-color: #0C0A09;
-    --secondary-color: #FDF5F2;
-    --tertiary-color: #A47F6A;
-    --quaternary-color: #9AA1B1;
-    --new-color: #CDB5A7;
+    /*--primary-color: #0C0A09;*/
+    /*--secondary-color: #FDF5F2;*/
+    /*--tertiary-color: #A47F6A;*/
+    /*--quaternary-color: #9AA1B1;*/
+    /*--new-color: #CDB5A7;*/
+}
+.index-page {
+    border: 3px solid #8FA399;
+    min-height: 100vh;
+}
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    position: relative;
+}
+
+.wrapper {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 ul, li, h1, h2, h3, h4, h5, h6, p{
@@ -21,7 +37,17 @@ ul, li, h1, h2, h3, h4, h5, h6, p{
     margin: 0;
     padding: 0;
 }
-
+.logout-btn{
+    background-color:#F0D397;
+    color: #D17C19;
+    text-decoration: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.logout-btn:hover{
+    background-color: #D17C19;
+    color: #2E3833;
+}
 a {
     font-family: 'Playfair Display SC', serif;
     -webkit-font-smoothing: antialiased;
@@ -30,54 +56,173 @@ a {
     font-style: italic;
     margin: 0;
     padding: 0;
+    text-decoration: none;
+    color: inherit;
 
 }
 
 /*Nav Bar Styling and Animations*/
 nav {
-    background-color: var(--primary-color);
-    padding: 1rem;
+    background-color: #9A8873;
+    /*padding: 1rem;*/
 
     position: sticky;
     top: 0;
+    z-index: 1000;
 }
 
-nav.a {
-    color: var(--secondary-color);
-    text-decoration: none;
-}
+
+/*nav.a {*/
+/*    color: #F0D397;*/
+/*    text-decoration: none;*/
+/*}*/
 
 .inner-nav {
     display: flex;
     justify-content: space-between;
+    height: 50%;
 }
 
 .nav-list {
+    justify-content: center;
     list-style: none;
     margin: 0;
-    padding: 0;
-
+    padding-left: 25px;
+    padding-top: 50px;
+    padding-right: 25px;
     display: flex;
     gap: clamp(0.5rem, 5vw, 2rem);
 }
+.nav-bar a.custom-link{
+    text-decoration: none;
+    color: #161513;
+    /*text-shadow:2px 2px 2px #D17C19;*/
+}
+.nav-bar a.custom-link:hover{
+    text-decoration: none;
+    color: #161513;
+    text-shadow:2px 2px 2px #D17C19;
+}
+.nav-bar3 .home-link-3 {
+    text-decoration: none;
+    color: #161513;
+}
 
-.logo {
-    font-family: 'Playfair Display SC', serif;
-    color: #fff;
-    font-size: 50px;
-    font-weight: 900;
+/* Style for the home button on hover */
+.nav-bar3 .home-link-3:hover {
+    text-decoration: none;
+    color: #161513;
+    text-shadow:2px 2px 2px #D17C19;
+}
+
+/*.logo {*/
+/*    font-family: 'Playfair Display SC', serif;*/
+/*    color: #fff;*/
+/*    font-size: 50px;*/
+/*    font-weight: 900;*/
+/*}*/
+.row-jumbo {
+    display: flex;
+    background-color: #EEFFDB;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+/*.container-jumbo {*/
+/*    flex: 0 0 70%; !* Adjust the width of the jumbotron *!*/
+/*}*/
+
+.barrel-image-container {
+    flex: 0 0 25%;
+}
+.container, .row-jumbo{
+    width: 100%;
+}
+.container-jumbo {
+    max-width: 50%;
+    /*padding: 20px;*/
+    background-color: #EEFFDB;
+    flex: 0 0 70%;
+    margin: 0;
+}
+
+.jumbotron {
+    background-color: #2E3833;
+    color: #F0D397;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.jumbotron h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.lead {
+    font-size: 1.25em;
+    margin-bottom: 20px;
+}
+.jumbotron a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.jumbotron a:hover {
+    color: inherit;
+    text-decoration: none;
+}
+
+.btn-jumbotron {
+    display: inline-block;
+    font-weight: 700;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: 0.25rem;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    background-color: #D17C19; /* Set the background color to green */
+    color: #F0D397;
+    border-color: #D17C19; /* Set the border color to green */
+    text-decoration: none;
+}
+
+.btn-jumbotron:hover {
+    color: #e5b34b;
+    background-color: #ce7916; /* Set the hover background color to a darker green */
+    border-color: #ce7916; /* Set the hover border color to a darker green */
+    text-decoration: none;
+}
+.jumbo-hr{
+    color: #D17C19;
+}
+.brewhop-logo{
+    display: flex;
+    /*position: relative;*/
+    /*bottom: 20px;*/
+    width: 150px;
+    height: 150px;
 }
 
 /*Index.html styling*/
 body {
-    background-color: #464853;
+    background-color: #EEFFDB;
 }
 .hero-top {
-    display: flex;
-    justify-content: start;
-    padding-top: 100px;
-    padding-bottom: 100px;
-    margin-left: 50px;
+    /*display: flex;*/
+    /*justify-content: start;*/
+    /*padding-top: 100px;*/
+    background-color: #EEFFDB;
+    /*padding-bottom: 100px;*/
+    /*margin-left: 50px;*/
+    margin-right: 0;
 }
 .welcome-box {
     display: flex;
@@ -92,7 +237,61 @@ body {
     overflow: hidden;
     text-space: 10px;
 }
+.footer{
+    background-color: #9A8873;
+    color: #161513;
+    text-align: center;
+    padding: 10px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+}
+.footer-list-image{
+    display: flex;
+    justify-content: center;
+    margin-right: 300px;
+    max-width: 1200px;
+
+}
+.footer-list{
+    justify-content: flex-start;
+    flex-direction: column;
+    list-style: none;
+    margin-right: 100px;
+    display: flex;
+    gap: clamp(0.5rem, 5vw, 2rem);
+}
+.footer a.footer-link{
+    text-decoration: none;
+    color: #161513;
+    /*text-shadow:2px 2px 2px #D17C19;*/
+}
+.footer a.footer-link:hover{
+    text-decoration: none;
+    color: #161513;
+    text-shadow:2px 2px 2px #D17C19;
+}
+
+.footer-image{
+    width: 150px;
+    height: 150px;
+}
+.footer-image:hover{
+    text-decoration: none;
+    color: #161513;
+    text-shadow:2px 2px 2px #D17C19;
+}
+/*.footer-image:hover{*/
+/*    opacity: 0.02%;*/
+/*}*/
+.footer-paragraph{
+    color: #F0D397;
+}
 /*Genesis Style's*/
+.video-full-width {
+    width: 100%;
+    display: block;
+}
 .profile-card {
     display: flex;
     flex-direction: column;
@@ -116,34 +315,71 @@ body {
     text-align: center;
 }
 
-.pfp {
-    background-color: white;
-    margin-bottom: 10px;
-}
+/*.pfp {*/
+/*    background-color: white;*/
+/*    margin-bottom: 10px;*/
+/*}*/
+/*.profile-page, .all-reviews-page{*/
+/*    background-color: #EEFFDB;*/
+/*    border: 3px solid #8FA399;*/
 
+/*}*/
+.all-reviews-container{
+    display: flex;
+}
+.visited-text{
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+    margin-left: 250px;
+    color: #D17C19;
+    font-size: 2rem;
+    /*margin-left: 50px;*/
+
+}
 .username-h1,
 .email-p {
     margin-bottom: 10px;
 }
 
-.edit-profile-btn {
-    position: absolute;
-    bottom: 8px; /* Adjust this value to control the distance from the bottom */
-    left: 50%; /* Align the button to the center horizontally */
-    transform: translateX(-50%); /* Adjust this to center the button horizontally */
-    display: block;
-    padding: 8px;
-    text-align: center;
-    background-color: #0C0A09;
-    text-decoration: none;
-    border-radius: 4px;
-}
 .review-container {
     display: flex;
     max-width: 1000px;
-    margin-left: 550px;
-    margin-top: -550px;
+    margin-left: 50px;
+    margin-top: 50px;
 }
+
+.review-card {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    height: 350px;
+    margin-right: 20px; /* Add a margin between cards */
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: #2E3833;
+    color: #F0D397;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.review-card .card-stuff {
+    flex: 1;
+    padding: 16px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.review-card img {
+    height: 75%; /* Make the image take the full height of the container */
+    width: 100%; /* Make the image take the full width of the container */
+    object-fit: cover; /* Maintain aspect ratio and cover the entire container */
+}
+.review-card:hover {
+    transform: translateY(35px);
+    box-shadow: 0 4px 8px rgba(139, 69, 19, 0.4), 0 0 10px rgba(244, 164, 96, 0.6);
+    transition: transform 0.3s ease, box-shadow 0.3s ease; }
 .user-reviews-text {
     display: flex;
     margin-bottom: -100px;
@@ -151,11 +387,44 @@ body {
     /*left: 430px;*/
     /*bottom: 600px;*/
 }
+.card-button, .view-all-button{
+    background-color:#F0D397;
+    color: #D17C19;
+    text-decoration: none;
+    border-radius: 4px;
+}
+.card-button:hover, .view-all-button:hover{
+    background-color: #D17C19;
+    color: #2E3833;
+}
+.all-reviews-btn{
+    display: flex;
+    justify-content: end;
+    margin-right: 20px;
+    padding-top: 10px;
+}
 .card-main:hover {
     transform: translateY(35px); /* Adjust the desired amount of vertical lift on hover */
     box-shadow:  0 12px 24px rgba(139, 69, 19, 0.4), 0 0 10px rgba(244, 164, 96, 0.6);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+.card-main-profile {
+    display: flex;
+    max-width: 250px;
+    height: 550px;
+    margin-top: 50px;
+    margin-left: 25px;
+    margin-right: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: #2E3833; /* Updated background color */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: relative;
+    padding: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
 
 .card-main-profile:hover {
     transform: translateY(35px); /* Adjust the desired amount of vertical lift on hover */
@@ -173,7 +442,8 @@ body {
     border: 1px solid #ddd;
     border-radius: 8px;
     overflow: hidden;
-    background-color: #fff;
+    background-color: #2E3833;
+    color: #F0D397;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     position: relative;
 }
@@ -183,7 +453,15 @@ body {
     overflow: hidden; /* Hide overflowing content */
     text-overflow: ellipsis;
 }
-
+.card-stuff-profile {
+    padding: 20px;
+    overflow: hidden;
+    text-align: center;
+}
+.span-username, .email-p{
+    padding-top: 10px;
+    color: #D17C19;
+}
 img {
     width: 100%; /* Make sure the images fill the container */
     height: auto; /* Maintain aspect ratio */
@@ -194,31 +472,36 @@ img {
     margin-bottom: 8px;
 }
 
-.card-button {
+.edit-profile-btn{
     position: absolute;
     bottom: 8px;
-    right: 8px;
+    left: 60px;
     display: block;
     padding: 8px;
     text-align: center;
-    background-color: #0C0A09;
+    background-color:#F0D397;
+    color: #D17C19;
     text-decoration: none;
     border-radius: 4px;
-}
-.circle {
-    width: 100px;
-    height: 100px;
-    margin-left: 25%;
-    background-color: #ccc;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+    }
+    .edit-profile-btn:hover {
+        background-color: #D17C19;
+        color: #2E3833;
+    }
+    .circle {
+        width: 100px;
+        height: 100px;
+        margin-left: 25%;
+        background-color: #ccc;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 
-.circle::before {
-    content: "\f007";
-    font-family: 'FontAwesome'; /* Use a font icon library, like FontAwesome */
+    .circle::before {
+        content: "\f007";
+        font-family: 'FontAwesome'; /* Use a font icon library, like FontAwesome */
     font-size: 40px;
     color: #fff;
 }
@@ -232,8 +515,645 @@ img {
         transform: translateX(0);
     }
 }
-
+@keyframes slideInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(50px); /* Adjust the initial position */
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+.card-main-profile,
+.review-card {
+    animation: slideInRight 0.5s ease-out forwards; /* Adjust the animation duration and timing function */
+}
+.profile-card,
+.review-card {
+    width: 200px; /* Adjust the width as needed */
+    height: 300px; /* Adjust the height as needed */
+}
 .card-main,
 .card-main-profile {
     animation: slideIn 0.5s ease-out forwards; /* Adjust the animation duration and timing function */
 }
+.all-reviews-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center child elements horizontally */
+}
+
+.visited-text {
+    margin-top: 20px;
+    color: #D17C19;
+    font-size: 2rem;
+    margin-right: 100px;
+}
+
+.review-container {
+    display: flex;
+    max-width: 1000px;
+    margin-top: 20px;
+
+    overflow-x: auto; /* Add a horizontal scrollbar if reviews overflow */
+}
+
+.review-card {
+    /* Your existing styles for review cards */
+    margin-right: 20px; /* Add margin between review cards */
+}
+/*.sign-in-page{*/
+/*    background-color: #EEFFDB;*/
+/*    border: 3px solid #8FA399;*/
+/*}*/
+.team-page, .about-page, .terms-page{
+    display: flex;
+    flex-direction: column;
+    background-color: #EEFFDB;
+    color: #D17C19;
+}
+.meet-the-team {
+    display: flex;
+    justify-content: space-around; /* or 'space-between' if you want space at the ends */
+    background-color: #EEFFDB;
+}
+.team-image{
+    width: 275px; /* Adjust the width as needed */
+    height: auto; /* This ensures the aspect ratio is maintained */
+    max-height: 300px; /* Limit the height to avoid excessive scaling */
+    object-fit: cover;
+}
+.team-btns{
+    padding-bottom: 25px;
+}
+.team-button {
+    text-decoration: none;
+    color: #161513;
+    /*text-shadow:2px 2px 2px #D17C19;*/
+}
+
+.team-button:hover {
+    text-decoration: none;
+    color: #161513;
+    text-shadow:2px 2px 2px #D17C19;
+}
+
+.team-button.github {
+    text-decoration: none;
+    color: #161513;
+    /*text-shadow:2px 2px 2px #D17C19;*/
+}
+
+.team-button.github:hover {
+    text-decoration: none;
+    color: #161513;
+    text-shadow:2px 2px 2px #D17C19;
+}
+.meet-title, .about-title{
+    display: flex;
+    justify-content: center;
+    padding: 15px;
+    font-size: 20px;
+    color: #2E3833;
+}
+.sign-in-page{
+    background-color: #EEFFDB;
+}
+.terms-title{
+    display: flex;
+    justify-content: center;
+    font-size: 25px;
+}
+.terms-text{
+    display: flex;
+    justify-content: center;
+    font-size: 20px;
+    color: #2E3833;
+    padding-top: 10px;
+}
+.scroll-box {
+    max-height: 200px;
+    overflow-y: auto;
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-top: 20px;
+    border-radius: 8px;
+    background-color: #2E3833;
+    color: #D17C19;
+    font-size: 20px;
+}
+.all-reviews-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    max-width: 1200px; /* Adjust the max-width as needed */
+    margin: 0 auto;
+}
+
+.all-reviews-card {
+    flex: 0 1 calc(20% - 20px);
+    width: calc(20% - 20px);
+    height: 375px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: #2E3833;
+    color: #F0D397;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.all-reviews-card img {
+    height: 100%; /* Adjust the height as needed */
+    width: 100%;
+    object-fit: cover;
+}
+
+.all-reviews-card .card-stuff {
+    padding: 16px;
+    overflow: hidden;
+}
+
+.all-reviews-card .rating {
+    margin-bottom: 8px;
+}
+
+.all-reviews-card .card-button {
+    margin-top: auto; /* Align the button to the bottom of the card */
+}
+@media screen and (max-width: 1440px){
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        margin: 0;
+    }
+
+    .container {
+        width: 100%;
+    }
+
+    .container-jumbo {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    nav {
+        width: 100%;
+    }
+    .container-jumbo {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    nav {
+        width: 100%;
+    }
+
+    body {
+        margin: 0;
+        overflow-x: hidden;
+    }
+
+    .footer {
+        position: unset;
+    }
+
+    .footer-list-image {
+        margin-right: 0;
+        justify-content: center;
+    }
+    .all-reviews-container {
+        display: -webkit-box;
+        overflow-x: auto; /* Add horizontal scroll if there are more cards than can fit on the screen */
+    }
+
+    .all-reviews-card {
+        flex: 0 0 auto; /* Set the card to its natural size */
+        margin-right: 10px; /* Add margin between cards */
+        box-sizing: border-box;
+    }
+
+    .review-image {
+        max-width: 100%;
+        height: auto;
+        object-fit: cover;
+    }
+
+}
+@media screen and (max-width: 1200px) {
+    body {
+        margin: 0; /* Remove default body margin */
+    }
+    .container-jumbo {
+        max-width: 70%;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    body {
+        margin: 0; /* Remove default body margin */
+    }
+    nav {
+        width: 100%;
+        padding: 10px;
+        box-sizing: border-box;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 700;
+    }
+    .nav-list {
+        flex-direction: column;
+        align-items: center;
+        padding: 0;
+    }
+
+    .nav-list li {
+        padding: 10px;
+    }
+    .profile-content{
+        margin-top: 150px;
+    }
+    .content-container{
+        margin-top: 150px;
+    }
+    .profile-page {
+        /*border: 3px solid #8FA399;*/
+        min-height: 100vh;
+        display: flex;
+        margin: 0;
+        padding: 0;
+    }
+    .all-reviews-row{
+        margin-top: 200px;
+    }
+    .all-reviews-container {
+        display: -webkit-box;
+        overflow-x: auto; /* Add horizontal scroll if there are more cards than can fit on the screen */
+    }
+
+    .all-reviews-card {
+        flex: 0 0 auto; /* Set the card to its natural size */
+        margin-right: 10px; /* Add margin between cards */
+        box-sizing: border-box;
+    }
+
+    .review-image {
+        max-width: 100%;
+        height: 150px;
+        object-fit: cover;
+    }
+
+    .column-container {
+        flex: 1; /* This ensures the columns take up equal width */
+    }
+
+    .container-jumbo {
+        max-width: 80%;
+    }
+
+    .jumbotron h1 {
+        font-size: 2em;
+    }
+
+    .lead {
+        font-size: 1.1em;
+    }
+    .team-page{
+        margin-top: 180px;
+    }
+    .team-image{
+        width: 200px;
+        height: 250px;
+    }
+    .about-page{
+        margin-top: 175px;
+        padding: 0;
+    }
+    .footer{
+        max-width: 1024px;
+        position: relative;
+        bottom: auto;
+        width: 100%;
+        margin-top: 10px; /* Adjust the margin-top as needed */
+    }
+    .scroll-title {
+        max-height: none; /* Adjust as needed, or you can remove this line */
+        margin-top: 175px;
+    }
+
+}
+@media screen and (max-width: 768px) {
+    body, html {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden;
+    }
+
+    .wrapper {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .container, .row-jumbo {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    nav {
+        width: 100%;
+        padding: 10px;
+        box-sizing: border-box;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 700;
+    }
+
+    .nav-list {
+        flex-direction: column;
+        align-items: center;
+        padding: 0;
+    }
+
+    .nav-list li {
+        padding: 10px;
+    }
+
+    .carousel-container {
+        width: 100%;
+        position: relative;
+        overflow: hidden;
+        display: block;
+        margin-top: 150px;
+    }
+
+    .carousel {
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+        margin: 0 auto;
+    }
+
+    .video-slide {
+        width: 100%;
+        display: block;
+        max-height: 100%;
+    }
+
+    .video-full-width {
+        width: 100%;
+        display: block;
+    }
+
+    .container-jumbo {
+        margin-top: 20px;
+        max-width: 90%;
+    }
+
+    .jumbotron h1 {
+        font-size: 1.8em;
+    }
+
+    .lead {
+        font-size: 1em;
+    }
+
+    .footer-list-image {
+        position: relative;
+        display: flex;
+        left: 60px;
+    }
+    .profile-content {
+        overflow-x: auto;
+        display: flex;
+    }
+
+    .review-container {
+        display: flex;
+        flex-wrap: nowrap; /* Ensure that the cards are not wrapping to the next line */
+        overflow-x: auto;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        padding-bottom: 10px;
+    }
+
+    /* Remove the "flex: 0 0 auto;" from .review-card */
+    .review-card {
+        background-color: #2E3833;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        width: 400px;
+        margin-right: 20px;
+        /* flex: 0 0 auto; */ /* Remove this line */
+    }
+
+    /* Style for the card content */
+    .card-stuff {
+        padding: 15px;
+    }
+
+    /* Ensure that the container and cards don't exceed the screen width */
+    .profile-content {
+        overflow-x: hidden;
+    }
+
+    /* Style for the "View All Reviews" button */
+    .view-all-button {
+        background-color: #3498db;
+        color: #fff;
+        padding: 10px 20px;
+        text-decoration: none;
+        border-radius: 5px;
+        display: block;
+        margin-top: 20px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .about-img {
+        width: 100%;
+        height: auto;
+    }
+
+    .about-row {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .col-lg-8 {
+        width: 100%;
+        padding: 0 15px;
+    }
+
+    .footer {
+        max-width: 768px;
+        margin-top: auto;
+    }
+    .all-reviews-row {
+        flex-direction: column; /* Change to a column layout on smaller screens */
+    }
+
+    .all-reviews-col {
+        width: 100%; /* Make the column full width */
+    }
+
+    .visited-text {
+        font-size: 18px; /* Adjust the font size as needed */
+        margin-top: 10px; /* Add some top margin for spacing */
+    }
+
+    .all-reviews-card {
+        width: 100%; /* Make each card full width */
+        margin-bottom: 20px; /* Add some bottom margin between cards */
+    }
+
+    .review-image {
+        width: 100%; /* Make the image full width */
+        height: auto; /* Maintain aspect ratio */
+    }
+}
+    @media screen and (max-width: 425px) {
+        .nav-list {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 10px;
+        }
+
+        .nav-list-left,
+        .nav-list-right {
+            width: 100%;
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .nav-list-left li,
+        .nav-list-right li {
+            margin-bottom: 10px;
+        }
+
+        .brewhop-logo {
+            margin-top: 10px;
+        }
+
+        .hero-top {
+            padding-top: 20px; /* Adjust as needed */
+        }
+
+        .jumbotron {
+            text-align: center;
+        }
+
+        .jumbo-image-div {
+            text-align: center;
+        }
+
+        .jumbo-image {
+            width: 100%; /* Make the image responsive */
+        }
+
+        .footer-list-image {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            text-align: center;
+            margin-right: 155px;
+            padding-bottom: 10px;
+            width: 425px;
+        }
+
+        .footer-image {
+            display: flex;
+            margin-top: 0; /* Adjust as needed */
+            max-width: 150px;
+            height: 150px/* Ensure the logo doesn't exceed its container */
+        }
+        .profile-page {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .profile-content{
+            display: flex;
+        }
+
+        .nav-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background-color:  #9A8873;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .row.profile-content {
+            width: 100%;
+            max-width: 80%; /* Adjust the max-width as needed */
+            padding-top: 20px; /* Adjust as needed to avoid overlapping with the navbar */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .column-container {
+            width: 100%;
+        }
+
+        .card-main-profile {
+            margin-bottom: 20px; /* Adjust as needed */
+        }
+
+        .container.review-container {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .review-card {
+            width: 100%;
+            max-width: 90%; /* Adjust the max-width as needed */
+            margin-bottom: 10px; /* Adjust as needed */
+        }
+
+        .view-all-button {
+            margin-top: 10px;
+            margin-right: 30px;
+        }
+        .all-reviews-card {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            margin-bottom: 15px;
+        }
+
+        .card-stuff {
+            padding: 15px;
+        }
+
+        .review-image {
+            width: 100%;
+            height: auto;
+        }
+
+        .card-title {
+            font-size: 16px;
+            margin-top: 10px; /* Adjust as needed */
+        }
+
+        .rating {
+            font-size: 14px;
+        }
+
+        .card-button {
+            margin-top: 10px;
+        }
+    }
