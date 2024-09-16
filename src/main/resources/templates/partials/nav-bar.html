@@ -2,28 +2,37 @@
 
 <!--Thymeleaf connection-->
 <html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security" lang="">
+<head>
+    <link rel="stylesheet" href="/css/sign-up.css">
+</head>
 <body>
 <div th:fragment="nav-bar" class="nav-bar">
     <div class="inner-nav">
-        <span class="logo">Brew-Hop</span>
-      <ul class="nav-list">
-          <li><a th:href="@{/}" th:method="get">Home</a></li>
-          <li><a th:href="@{/view-breweries}" th:method="get">Search Breweries</a></li>
-          <li><a th:href="@{/sign-up}" th:method="get">Sign up</a></li>
-          <li><a th:href="@{/sign-in}" th:method="get">Sign in</a></li>
+<!--        <img src="/img/brewhop.png" class="brewhop-logo" alt="brewhop" >-->
+      <ul class="nav-list nav-list-left">
+          <li><a th:href="@{/}" th:method="get" class="custom-link">Home</a></li>
+          <li><a th:href="@{/view-breweries}" th:method="get" class="custom-link">Search Breweries</a></li>
       </ul>
+          <img src="/img/brewhop.png" class="brewhop-logo" alt="brewhop" >
+        <ul class="nav-list nav-list-right">
+          <li><a th:href="@{/sign-up}" th:method="get" class="custom-link">Sign up</a></li>
+          <li><a th:href="@{/sign-in}" th:method="get" class="custom-link">Sign in</a></li>
+      </ul>
+
     </div>
 </div>
 
 <div th:fragment="nav-bar2" class="nav-bar">
     <div class="inner-nav">
-        <span class="logo">Brew-Hop</span>
-      <ul>
-          <li><a th:href="@{/}" th:method="post">Home</a></li>
-          <li><a th:href="@{/view-breweries}" th:method="post">Search</a></li>
-          <li><a th:href="@{/profile}" th:method="get">Profile</a></li>
+        <img src="/img/brewhop.png" class="brewhop-logo" alt="brewhop" >
+        <ul class="nav-list nav-list-left">
+          <li><a th:href="@{/}" th:method="post" class="custom-link">Home</a></li>
+          <li><a th:href="@{/view-breweries}" th:method="post" class="custom-link">Search</a></li>
+        </ul>
+        <ul class="nav-list nav-list-right">
+          <li><a th:href="@{/profile}" th:method="get" class="custom-link">Profile</a></li>
           <li><form th:action="@{/logout}" th:method="post">
-            <button>Logout</button>
+            <button >Logout</button>
           </form></li>
       </ul>
     </div>
@@ -31,12 +40,13 @@
 
 <div th:fragment="nav-bar3">
     <div class="inner-nav">
-        <span class="logo">Brew-Hop</span>
+        <img src="/img/brewhop.png" class="brewhop-logo" alt="brewhop" >
         <ul>
-            <li><a th:href="@{/}" th:method="post">Home</a></li>
+            <li><a th:href="@{/}" th:method="post" class="home-link-3">Home</a></li>
         </ul>
     </div>
 </div>
+
 </body>
 </html>
 

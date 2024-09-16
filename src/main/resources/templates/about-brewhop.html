@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/css/main.css">
+    <title>About BrewHop</title>
+</head>
+<header th:replace="~{partials/head.html :: header}"></header>
+<body class="about-page">
+<div th:unless="${#authorization.expression('isAuthenticated()')}">
+    <nav th:insert="~{partials/nav-bar.html :: nav-bar}"></nav>
+</div>
+<div th:if="${#authorization.expression('isAuthenticated()')}">
+    <nav th:insert="~{partials/nav-bar.html :: nav-bar2}"></nav>
+</div>
+<div class="page-wrapper">
+    <div class="container">
+        <div class="row" style="display: flex">
+            <div class="img-col">
+                <img src="/img/pexels-percival-ian-muico-2835547.jpg" class="about-img" style="width: 400px; height: 500px; border-radius: 0.02%; padding: 20px">
+            </div>
+            <div class="col-lg-8 offset-lg-2">
+                <h1 class="about-title">About BrewHop</h1>
+                <p>Welcome to BrewHop, the ultimate platform for beer enthusiasts to share, discover, and celebrate the world of breweries. Whether you're a seasoned beer connoisseur or a curious newcomer, BrewHop is your go-to guide for exploring the diverse and exciting universe of craft brews.</p>
+
+                <h2 class="about-title">Our Mission</h2>
+                <p>At BrewHop, our mission is to connect beer lovers around the globe and provide a space where they can share their experiences, insights, and reviews about breweries. We believe in the power of community and the joy that comes from discovering new flavors and hidden gems in the world of craft beer.</p>
+                <div class="features-section">
+                    <div class="feature">
+                        <h3 class="about-title">Explore Breweries</h3>
+                        <p>Discover a wide range of breweries, each with its unique character and offerings. From local favorites to global treasures, our platform is your passport to a world of beer exploration.</p>
+                    </div>
+                    <div class="feature">
+                        <h3 class="about-title">Share Your Reviews</h3>
+                        <p>Share your thoughts and reviews about breweries you've visited. Help fellow beer enthusiasts find hidden gems and make informed choices on their beer journey.</p>
+                    </div>
+                    <div class="feature">
+                        <h3 class="about-title">Connect with the Community</h3>
+                        <p>Connect with like-minded individuals who share your passion for craft beer. Join discussions, exchange recommendations, and become part of the BrewHop community.</p>
+                    </div>
+            </div>
+        </div>
+    </div>
+
+<div class="footer">
+    <div class="footer-list-image">
+        <ul class="footer-list ">
+            <li><a class="footer-link" th:href="@{/meet-the-team}">Meet the Team</a></li>
+            <li><a class="footer-link"  th:href="@{/terms-of-service}">Terms of Service</a></li>
+        </ul>
+        <a href="#" onclick="scrollToTop(); return false;">
+            <img src="/img/brewhop.png" class="footer-image" alt="footer-image">
+        </a>
+    </div>
+
+    <p class="footer-paragraph">Embark on a journey of flavor and discovery. Your passport to the world of craft brews and global adventures.</p>
+
+</div>
+</div>
+</body>
+</html>

@@ -38,9 +38,10 @@ public class SecurityConfiguration {
         http.authorizeHttpRequests((requests) -> requests
 
 
-                        .requestMatchers("/reviews/create", "/review/edit","/profile", "/create", "/profile/edit/{id}", "/profile/edit", "/profile/edit-review", "/view-review/{id}", "review/delete", "/delete-profile").authenticated()
+                        .requestMatchers("/reviews/create", "/review/edit","/profile", "/create", "/profile/edit/{id}", "/profile/edit", "/profile/edit-review", "/view-review/{id}", "review/delete", "/delete-profile", "/all-reviews").authenticated()
 
-                        .requestMatchers("/", "/reviews", "/reviews/*", "/sign-up", "/sign-in", "/view-breweries", "/view-brewery").permitAll()
+                        .requestMatchers("/", "/reviews", "/reviews/*", "/sign-up", "/sign-in", "/view-breweries", "/view-brewery", "/meet-the-team", "about-brewhop", "terms-of-service").permitAll()
+
 
                         .requestMatchers("/css/**", "/js/**", "/img/**").permitAll())
                 .formLogin((login) -> login.loginPage("/sign-in").defaultSuccessUrl("/profile", true))
